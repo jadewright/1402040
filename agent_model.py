@@ -2,8 +2,6 @@
 from mesa import Agent, Model
 from mesa.time import RandomActivation
 from mesa.space import MultiGrid
-from mesa.datacollection import DataCollector
-import numpy as np
 
 class CustomAgent(Agent):
     def __init__(self, unique_id, model, preferred_location):
