@@ -50,7 +50,6 @@ def main():
                     
                 
                 fig.update_layout(margin=dict(l=20, r=20, t=40, b=20), autosize=True,
-                                  height=1000,
                                   title=f'Step {step + 1}', xaxis=dict(range=[0, grid_size]), 
                                   legend=dict(
                                          font=dict(
