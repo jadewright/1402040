@@ -1,6 +1,6 @@
 https://jadewright1402040.streamlit.app
 
-Currently runs on browser windows only.
+Currently best runs on browser windows.
 
 Demonstrated, is a simulation of Agent Based Modeling.
 In this program, users are prompted to enter the number of agents and a preferred (x, y) coordinate for each agent. 
