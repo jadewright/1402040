@@ -5,7 +5,6 @@ import pandas as pd
 import plotly.graph_objects as go
 import time
 
-
 st.set_page_config(layout="centered", page_title="Agent-Based Model Simulation")
 
 def get_user_preferences(num_agents):
@@ -47,10 +46,7 @@ def main():
                     fig.add_trace(go.Scatter(x=starting_point['x'], y=starting_point['y'], mode='markers',
                                              marker=dict(size=14, symbol='diamond-tall', line=dict(width=2)),
                                              name=f'Agent {agent_id} Start'))
-                
-                st.plotly_chart(fig, use_container_width=True)  
-                time.sleep(0.5)                    
-                             
+                                               
                 fig.update_layout(margin=dict(l=20, r=20, t=40, b=20), autosize=True,
                                   title=f'Step {step + 1}', xaxis=dict(range=[0, grid_size]), 
                                   legend=dict(
@@ -59,5 +55,8 @@ def main():
                                         )),
                                   yaxis=dict(range=[0, grid_size]), legend_title_text='Agent ID')
             
+                st.plotly_chart(fig, use_container_width=True)  
+                time.sleep(0.5)  
+
 if __name__ == "__main__":
     main()
