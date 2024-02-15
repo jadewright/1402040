@@ -9,21 +9,21 @@ import time
 st.set_page_config(layout="wide", page_title="Agent-Based Model Simulation")
 
 def get_user_preferences(num_agents):
-    st.sidebar.subheader("Preferred Locations for Agents:")
+    st.subheader("Preferred Locations for Agents:")
     preferences = []
     for i in range(num_agents):
-        x = st.sidebar.slider(f"x-coordinate for Agent {i + 1}:", min_value=1, max_value=10, value=5, key=f"x{i}")
-        y = st.sidebar.slider(f"y-coordinate for Agent {i + 1}:", min_value=1, max_value=10, value=5, key=f"y{i}")
+        x = st.slider(f"x-coordinate for Agent {i + 1}:", min_value=1, max_value=10, value=5, key=f"x{i}")
+        y = st.slider(f"y-coordinate for Agent {i + 1}:", min_value=1, max_value=10, value=5, key=f"y{i}")
         preferences.append((x, y))
     return preferences
 
 def main():
-    st.sidebar.title("Agent-Based Model Simulation")
-    num_agents = st.sidebar.slider("Select the number of agents:", 1, 10, 5)
+    st.title("Agent-Based Model Simulation")
+    num_agents = st.slider("Select the number of agents:", 1, 10, 5)
     grid_size = 10  
     user_preferences = get_user_preferences(num_agents)
 
-    if st.sidebar.button("Start Simulation"):
+    if st.button("Start Simulation"):
         with st.empty():  
             model = CustomModel(grid_size, grid_size, num_agents, user_preferences)
             steps = 50  
